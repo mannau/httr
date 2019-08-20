@@ -156,6 +156,7 @@ request_perform <- function(req, handle, refresh = TRUE) {
     return(request_perform(req, handle, refresh = FALSE))
   }
 
+  message("RESPONSE URL: ", resp$url)
   url_scheme <- parse_url(resp$url)$scheme
   is_http <- tolower(url_scheme) %in% c("http", "https")
   if (is_http) {
